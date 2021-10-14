@@ -9,4 +9,10 @@ Outline of some basics:
 * [STAR](https://github.com/alexdobin/STAR)
 * [RSEM](https://github.com/deweylab/RSEM)
 
-You can also get this tutorial and run it on your laptop
+
+Basic steps for analysis
+1. Downloading annotation, reference genome, raw data
+2. Installing Programs (Fastqc, Trimmomatic, STAR, RSEM)
+3. Indexing the genome
+4. Mapping the data
+5. Quantification: Calculating TPM or FPKM
