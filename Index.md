@@ -1,6 +1,6 @@
 # RNA-Seq analysis for bacterial gene expression
 
-This repo contains an introduction to [Jupyter](https://jupyter.org) and [IPython](https://ipython.org).
+This is updated at 2021.10.14
 
 Outline of some basics:
 
