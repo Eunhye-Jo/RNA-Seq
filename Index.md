@@ -2,7 +2,7 @@
 
 This is updated at 2021.10.14
 
-Outline of some basics:
+Tools for RNA-Seq analysis
 
 * [FastQC](../examples/Notebook/Notebook%20Basics.ipynb)
 * [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
@@ -10,7 +10,7 @@ Outline of some basics:
 * [RSEM](https://github.com/deweylab/RSEM)
 
 
-Basic steps for analysis
+Basic steps
 1. Downloading annotation, reference genome, raw data
 2. Installing Programs (Fastqc, Trimmomatic, STAR, RSEM)
 3. Indexing the genome
