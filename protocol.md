@@ -57,10 +57,8 @@ Basic steps
 	
 
 
-
-
   
-## FastQC
+## FastQC 부터 해보자
 
 	cd data
 	mkdir fastqc
@@ -90,9 +88,24 @@ result (3분 소요)
 	Approx 95% complete for KS1039_3h_0_1_1.fastq.gz
 	Analysis complete for KS1039_3h_0_1_1.fastq.gz
 
+이거를 모든 샘플에서 다 진행한 후 output file로 생성된 html을 열어서 sequencing quality check
 
+## Trimmomatic으로 잘라보자
 
+생성된 파일 저장할 폴더 생성
 
+	mkdir trimmed
+	
+
+	java -jar /Volumes/T7/SSA/tools/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 
+	KS1039_3h_0_1_1.fastq.gz 
+	KS1039_3h_0_1_2.fastq.gz
+	SSA_3h_0_1_f_trim.fastq.gz 
+	SSA_3h_0_1_f_unpaired.fastq.gz 
+	SSA_3h_0_1_r_trim.fastq.gz 
+	SSA_3h_0_1_r_unpaired.fastq.gz 
+	ILLUMINACLIP:/Volumes/T7/SSA/tools/trimmomatic/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10 SLIDINGWINDOW:4:15 LEADING:10 TRAILING:10 MINLEN:50
+	
 
 
 
