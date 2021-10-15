@@ -107,6 +107,16 @@ Trimmomatic 실행
 * Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
 * Drop reads below the 36 bases long (MINLEN:36)
 
+result (4분 소요)
 
+	Multiple cores found: Using 4 threads
+	Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+	Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+	Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+	Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+	Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+	ILLUMINACLIP: Using 1 prefix pairs, 4 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+	Input Read Pairs: 11264303 Both Surviving: 10985456 (97.52%) Forward Only Surviving: 244313 (2.17%) Reverse Only Surviving: 24982 (0.22%) Dropped: 9552 (0.08%)
+	TrimmomaticPE: Completed successfully
 
 
