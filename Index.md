@@ -26,14 +26,57 @@ Basic steps
 
 [NCBI](https://www.ncbi.nlm.nih.gov/genome/)에서 bacterial genome sequence download
 
-	cd tools
+	cd ref
 	wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.fna.gz
+	
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)에서 설치파일 다운로드
+	cd ..
+	cd tools
+	wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
 	unzip fastqc_v0.11.9.zip
 	chmod 755 *
-	
+
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)에서 설치파일 다운로드
+
+	wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+	unzip Trimmomatic-0.39.zip
+
+
   
 ## FastQC
 
 	cd data
-	../tools/FastQC/fastqc -o fastqc/KS1039_3h_0_1_1.fastq.gz
+	mkdir fastqc
+	../tools/FastQC/fastqc -o fastqc/ KS1039_3h_0_1_1.fastq.gz
+
+result (3분 소요)
+		Started analysis of KS1039_3h_0_1_1.fastq.gz
+		Approx 5% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 10% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 15% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 20% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 25% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 30% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 35% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 40% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 45% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 50% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 55% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 60% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 65% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 70% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 75% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 80% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 85% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 90% complete for KS1039_3h_0_1_1.fastq.gz
+		Approx 95% complete for KS1039_3h_0_1_1.fastq.gz
+		Analysis complete for KS1039_3h_0_1_1.fastq.gz
+
+
+
+
+
+
+
+
 
