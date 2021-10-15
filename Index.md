@@ -32,3 +32,8 @@ Basic steps
 	chmod 755 *
 	
   
+## FastQC
+
+	cd data
+	../tools/FastQC/fastqc -o fastqc/KS1039_3h_0_1_1.fastq.gz
+
