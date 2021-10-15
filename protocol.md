@@ -20,6 +20,10 @@ Basic steps
 
 	cd ref
 	wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.fna.gz
+	gunzip GCF_007814115.1_ASM781411v1_genomic.fna.gz
+	wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.gtf.gz
+	gunzip GCF_007814115.1_ASM781411v1_genomic.gtf.gz
+	
 	
 [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)에서 설치파일 다운로드
 	
@@ -120,7 +124,35 @@ result (4분 소요)
 
 Generating genome indexes
 
-	STAR --runMode genomeGenerate --genomeDir /Volumes/T7/SSA/tools/STAR-2.7.9a/bin/MacOSX_x86_64/genome --genomeFastaFiles /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.fa --sjdbGTFfile /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.gff --sjdbOverhang 100 --runThreadN 2 --genomeSAindexNbases 8
+	mkdir /Volumes/T7/SSA/ref/genomeIndex
+	cp GCF_007814115.1_ASM781411v1_cds_from_genomic.fna GCF_007814115.1_ASM781411v1_cds_from_genomic.fa
+	STAR --runMode genomeGenerate --genomeDir /Volumes/T7/SSA/ref/GenomeIndex --genomeFastaFiles /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.fna --sjdbGTFfile /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.gtf --sjdbOverhang 100 --runThreadN 2 --genomeSAindexNbases 8
 	
-	
+genome 폴더에 index 파일들이 생성되어있음
+
+	STAR version: 2.7.9a   compiled:  :/Users/cshl/data/STAR/STAR/source
+	Oct 15 22:35:44 ..... started STAR run
+	Oct 15 22:35:44 ... starting to generate Genome files
+	Oct 15 22:35:44 ..... processing annotations GTF
+	Oct 15 22:35:44 ... starting to sort Suffix Array. This may take a long time...
+	Oct 15 22:35:44 ... sorting Suffix Array chunks and saving them to disk...
+	Oct 15 22:35:46 ... loading chunks from disk, packing SA...
+	Oct 15 22:35:46 ... finished generating suffix array
+	Oct 15 22:35:46 ... generating Suffix Array index
+	Oct 15 22:35:46 ... completed Suffix Array index
+	Oct 15 22:35:46 ... writing Genome to disk ...
+	Oct 15 22:35:46 ... writing Suffix Array to disk ...
+	Oct 15 22:35:46 ... writing SAindex to disk
+	Oct 15 22:35:46 ..... finished successfully
+
+
 RSEM index file
+
+	cd ref
+	mkdir RsemIndex
+	rsem-prepare-reference -p 2 --gtf GCF_007814115.1_ASM781411v1_genomic.gff GCF_007814115.1_ASM781411v1_genomic.fa RsemIndex
+	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gff --trusted-sources BestRefSeq,Curated Genomic --bowtie GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
+	
+
+	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gtf --bowtie2 GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
+
