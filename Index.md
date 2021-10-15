@@ -42,6 +42,22 @@ Basic steps
 	wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
 	unzip Trimmomatic-0.39.zip
 
+[STAR](https://github.com/alexdobin/STAR)설치
+
+	wget https://github.com/alexdobin/STAR/archive/2.7.9a.tar.gz
+	tar -xzf 2.7.9a.tar.gz
+	cd STAR-2.7.9a
+
+[RSEM](https://github.com/deweylab/RSEM)에서 제공하는 설치는 리눅스 전용이라서 맥 환경에서 설치하는 방법을 [찾아서](https://anaconda.org/bioconda/rsem) 이용함
+
+	conda install -c bioconda rsem
+	.
+	.
+	Proceed?(y/n) y
+	
+
+
+
 
   
 ## FastQC
@@ -51,28 +67,28 @@ Basic steps
 	../tools/FastQC/fastqc -o fastqc/ KS1039_3h_0_1_1.fastq.gz
 
 result (3분 소요)
-		Started analysis of KS1039_3h_0_1_1.fastq.gz
-		Approx 5% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 10% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 15% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 20% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 25% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 30% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 35% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 40% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 45% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 50% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 55% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 60% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 65% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 70% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 75% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 80% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 85% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 90% complete for KS1039_3h_0_1_1.fastq.gz
-		Approx 95% complete for KS1039_3h_0_1_1.fastq.gz
-		Analysis complete for KS1039_3h_0_1_1.fastq.gz
 
+	Started analysis of KS1039_3h_0_1_1.fastq.gz
+	Approx 5% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 10% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 15% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 20% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 25% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 30% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 35% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 40% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 45% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 50% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 55% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 60% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 65% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 70% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 75% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 80% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 85% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 90% complete for KS1039_3h_0_1_1.fastq.gz
+	Approx 95% complete for KS1039_3h_0_1_1.fastq.gz
+	Analysis complete for KS1039_3h_0_1_1.fastq.gz
 
 
 
