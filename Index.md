@@ -22,8 +22,11 @@ Basic steps
 
 	mkdir SSA
 
-하위에 reference 데이터르 저장할	ref 폴더와 raw data를 저장할 	data 폴더 생성
+하위에 raw data, reference genome, analysis tools를 저장할 'data', 'ref', 'tools' 폴더 생성
+
 [NCBI](https://www.ncbi.nlm.nih.gov/genome/)에서 bacterial genome sequence download
 
+	cd tools
 	wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.fna.gz
+	
   
