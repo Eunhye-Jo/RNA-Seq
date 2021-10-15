@@ -19,9 +19,11 @@ Basic steps
 
 ## Downloading annotation, reference genome, raw data
 프로젝트 파일 생성
-  mkdir SSA
 
+	mkdir SSA
+
+하위에 reference 데이터르 저장할	ref 폴더와 raw data를 저장할 	data 폴더 생성
 [NCBI](https://www.ncbi.nlm.nih.gov/genome/)에서 bacterial genome sequence download
 
-  wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.fna.gz
+	wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/007/814/115/GCF_007814115.1_ASM781411v1/GCF_007814115.1_ASM781411v1_genomic.fna.gz
   
