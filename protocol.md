@@ -95,10 +95,17 @@ result (3분 소요)
 생성된 파일 저장할 폴더 생성
 
 	mkdir trimmed
+
+Trimmomatic 실행 	
+
+	java -jar /Volumes/T7/SSA/tools/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 KS1039_3h_0_1_1.fastq.gz KS1039_3h_0_1_2.fastq.gz /Volumes/T7/SSA/data/trimmed/SSA_3h_0_1_f_trim.fastq.gz /Volumes/T7/SSA/data/trimmed/SSA_3h_0_1_f_unpaired.fastq.gz /Volumes/T7/SSA/data/trimmed/SSA_3h_0_1_r_trim.fastq.gz /Volumes/T7/SSA/data/trimmed/SSA_3h_0_1_r_unpaired.fastq.gz ILLUMINACLIP:/Volumes/T7/SSA/tools/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10 SLIDINGWINDOW:4:15 LEADING:10 TRAILING:10 MINLEN:50
 	
 
-	java -jar /Volumes/T7/SSA/tools/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 KS1039_3h_0_1_1.fastq.gz KS1039_3h_0_1_2.fastq.gz SSA_3h_0_1_f_trim.fastq.gz SSA_3h_0_1_f_unpaired.fastq.gz SSA_3h_0_1_r_trim.fastq.gz SSA_3h_0_1_r_unpaired.fastq.gz ILLUMINACLIP:/Volumes/T7/SSA/tools/trimmomatic/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10 SLIDINGWINDOW:4:15 LEADING:10 TRAILING:10 MINLEN:50
-	
+Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
+Remove leading low quality or N bases (below quality 3) (LEADING:3)
+Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
+Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
+Drop reads below the 36 bases long (MINLEN:36)
 
 
 
