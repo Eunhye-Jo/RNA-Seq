@@ -40,16 +40,18 @@ Basic steps
 	tar -xzf 2.7.9a.tar.gz
 	cd STAR-2.7.9a
 	
+	wget http://data.sysmed.kr/install_STAR.sh chmod 755 install_STAR.sh ./install_STAR.sh
+	
 	# 1. Install brew (http://brew.sh/)
 	# 2. Install gcc with brew:
-	$ brew install gcc --without-multilib
+	brew install gcc --without-multilib
 	# 3. Build STAR:
 	# run 'make' in the source directory
 	# note that the path to c++ executable has to be adjusted to its current version
-	$cd source
-	$make STARforMacStatic CXX=/usr/local/Cellar/gcc/8.2.0/bin/g++-8
+	cd source
+	make STARforMacStatic CXX=/usr/local/Cellar/gcc/8.2.0/bin/g++-8
 	# 4. Make it availible through the terminal
-	$cp STAR /usr/local/bin
+	cp STAR /usr/local/bin
 
 
 [RSEM](https://github.com/deweylab/RSEM)에서 제공하는 설치는 리눅스 전용이라서 맥 환경에서 설치하는 방법을 [찾아서](https://anaconda.org/bioconda/rsem) 이용함
@@ -130,7 +132,7 @@ result (4분 소요)
 
 Generating genome indexes
 
-	STAR --runMode genomeGenerate --genomeDir /Volumes/T7/SSA/tools/STAR-2.7.9a/bin/MacOSX_x86_64/STAR --genomeFastaFiles /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.fna.gz --sjdbGTFfile /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.gff.gz --sjdbOverhang ReadLength-1 --runThreadN 2
+	STAR --runMode genomeGenerate --genomeDir /Volumes/T7/SSA/ref --genomeFastaFiles /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.fna --sjdbGTFfile /Volumes/T7/SSA/ref/GCF_007814115.1_ASM781411v1_genomic.gff --sjdbOverhang 100 --runThreadN 2
 	
 	
 RSEM index file
