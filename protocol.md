@@ -148,11 +148,17 @@ genome 폴더에 index 파일들이 생성되어있음
 
 RSEM index file
 
+
 	cd ref
 	mkdir RsemIndex
-	rsem-prepare-reference -p 2 --gtf GCF_007814115.1_ASM781411v1_genomic.gff GCF_007814115.1_ASM781411v1_genomic.fa RsemIndex
-	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gff --trusted-sources BestRefSeq,Curated Genomic --bowtie GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
 	
+	rsem-prepare-reference -p 2 --gtf GCF_007814115.1_ASM781411v1_genomic.gff GCF_007814115.1_ASM781411v1_genomic.fa RsemIndex
+	
+	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gff --trusted-sources BestRefSeq,Curated Genomic --bowtie GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
 
 	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gtf --bowtie2 GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
 
+
+	
+
+다 안되네..
