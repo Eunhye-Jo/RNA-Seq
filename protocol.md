@@ -146,19 +146,61 @@ genome 폴더에 index 파일들이 생성되어있음
 	Oct 15 22:35:46 ..... finished successfully
 
 
-RSEM index file
+Generating RSEM index file
 
 
 	cd ref
 	mkdir RsemIndex
+	rsem-prepare-reference --gtf GCF_007814115.1_ASM781411v1_genomic.gtf GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
 	
-	rsem-prepare-reference -p 2 --gtf GCF_007814115.1_ASM781411v1_genomic.gff GCF_007814115.1_ASM781411v1_genomic.fa RsemIndex
+gtf file과 fna file이 같이 있는 폴더 위치에서 실행할 것
+result (실행과 동시에 끝남)
+
+	rsem-extract-reference-transcripts RsemIndex 0 GCF_007814115.1_ASM781411v1_genomic.gtf None 0 GCF_007814115.1_ASM781411v1_genomic.fna
+	Parsing gtf File is done!
+	GCF_007814115.1_ASM781411v1_genomic.fna is processed!
+	83 transcripts are extracted.
+	Extracting sequences is done!
+	Group File is generated!
+	Transcript Information File is generated!
+	Chromosome List File is generated!
+	Extracted Sequences File is generated!
+
+	rsem-preref RsemIndex.transcripts.fa 1 RsemIndex
+	Refs.makeRefs finished!
+	Refs.saveRefs finished!
+	RsemIndex.idx.fa is generated!
+	RsemIndex.n2g.idx.fa is generated!
+
+Alignment using STAR
+
+	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../trimmed/SSA_3h_0_1_f_trim.fastq.gz ../trimmed/SSA_3h_0_1_r_trim.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --twopassMode Basic > message.txt
 	
-	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gff --trusted-sources BestRefSeq,Curated Genomic --bowtie GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
+error......
 
-	rsem-prepare-reference --gff3 GCF_007814115.1_ASM781411v1_genomic.gtf --bowtie2 GCF_007814115.1_ASM781411v1_genomic.fna RsemIndex
+	BAMoutput.cpp:27:BAMoutput: exiting because of *OUTPUT FILE* error: could not create output file SSA_3h_0%_1._STARtmp//BAMsort/4/47
+	SOLUTION: check that the path exists and you have write permission for this file. Also check ulimit -n and increase it to allow more open files.
+
+	Oct 19 11:12:44 ...... FATAL ERROR, exiting
+
+에러나서 찾아보다가 --outSAMtype BAM SortedByCoordinate 제거하고 다시 시도해봄
+
+	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../trimmed/SSA_3h_0_1_f_trim.fastq.gz ../trimmed/SSA_3h_0_1_r_trim.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --quantMode TranscriptomeSAM --twopassMode Basic > message.txt
 
 
+cat TestData1.Log.final.out
+Uniquely mapped reads % check
+
+	rsem-calculate-expression --paired-end --bam --estimate-rspd --append-names --no-bam-output -p 6 TestData1.Aligned.toTranscriptome.out.bam /RsemIndex path ./RSEM/TestData1.RSEM
+	ls
+	cd RSEM
+	ls -l
+	cat TestData1.RSEM.genes.results | less
+	cat TestData1.RSEM.genes.results | cut -f1,6,7 | less
+	cat TestData1.RSEM.genes.results | cut -f1,6,7 | sort -k3 -nr | less
+	
+	
+	
 	
 
-다 안되네..
+
