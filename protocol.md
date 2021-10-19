@@ -188,8 +188,49 @@ error......
 	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../trimmed/SSA_3h_0_1_f_trim.fastq.gz ../trimmed/SSA_3h_0_1_r_trim.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --quantMode TranscriptomeSAM --twopassMode Basic > message.txt
 
 
+7분 소요
 cat TestData1.Log.final.out
-Uniquely mapped reads % check
+Uniquely mapped reads % 확인
+
+					 Started job on |	Oct 19 11:29:01
+				     Started mapping on |	Oct 19 11:36:11
+					    Finished on |	Oct 19 11:36:11
+	       Mapping speed, Million of reads per hour |	nan
+
+				  Number of input reads |	0
+			      Average input read length |	0
+					    UNIQUE READS:
+			   Uniquely mapped reads number |	0
+				Uniquely mapped reads % |	0.00%
+				  Average mapped length |	0.00
+			       Number of splices: Total |	0
+		    Number of splices: Annotated (sjdb) |	0
+			       Number of splices: GT/AG |	0
+			       Number of splices: GC/AG |	0
+			       Number of splices: AT/AC |	0
+		       Number of splices: Non-canonical |	0
+			      Mismatch rate per base, % |	nan%
+				 Deletion rate per base |	0.00%
+				Deletion average length |	0.00
+				Insertion rate per base |	0.00%
+			       Insertion average length |	0.00
+				     MULTI-MAPPING READS:
+		Number of reads mapped to multiple loci |	0
+		     % of reads mapped to multiple loci |	0.00%
+		Number of reads mapped to too many loci |	0
+		     % of reads mapped to too many loci |	0.00%
+					  UNMAPPED READS:
+	  Number of reads unmapped: too many mismatches |	0
+	       % of reads unmapped: too many mismatches |	0.00%
+		    Number of reads unmapped: too short |	0
+			 % of reads unmapped: too short |	0.00%
+			Number of reads unmapped: other |	0
+			     % of reads unmapped: other |	0.00%
+					  CHIMERIC READS:
+			       Number of chimeric reads |	0
+				    % of chimeric reads |	0.00%
+
+ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
 	rsem-calculate-expression --paired-end --bam --estimate-rspd --append-names --no-bam-output -p 6 TestData1.Aligned.toTranscriptome.out.bam /RsemIndex path ./RSEM/TestData1.RSEM
 	ls
