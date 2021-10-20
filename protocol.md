@@ -176,17 +176,16 @@ Alignment using STAR
 
 	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../trimmed/SSA_3h_0_1_f_trim.fastq.gz ../trimmed/SSA_3h_0_1_r_trim.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --twopassMode Basic > message.txt
 	
-error......
+7부 걸려서 끝났는데 error......
 
 	BAMoutput.cpp:27:BAMoutput: exiting because of *OUTPUT FILE* error: could not create output file SSA_3h_0%_1._STARtmp//BAMsort/4/47
 	SOLUTION: check that the path exists and you have write permission for this file. Also check ulimit -n and increase it to allow more open files.
 
 	Oct 19 11:12:44 ...... FATAL ERROR, exiting
 
-에러나서 찾아보다가 --outSAMtype BAM SortedByCoordinate 제거하고 다시 시도해봄
+에러해결하려고 찾아보다가 --outSAMtype BAM SortedByCoordinate 제거하고 다시 시도해봄
 
 	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../trimmed/SSA_3h_0_1_f_trim.fastq.gz ../trimmed/SSA_3h_0_1_r_trim.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --quantMode TranscriptomeSAM --twopassMode Basic > message.txt
-
 
 7분 소요
 cat TestData1.Log.final.out
@@ -232,6 +231,18 @@ Uniquely mapped reads % 확인
 
 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
+
+	STAR --genomeDir /Volumes/T7/SSA/ref/GenomeIndex/ --readFilesIn <(gunzip -c ../KS1039_3h_0_1_1.fastq.gz ../KS1039_3h_0_1_2.fastq.gz) --outFileNamePrefix SSA_3h_0%_1. --runThreadN 6 --quantMode TranscriptomeSAM --twopassMode Basic > message3.txt
+
+이것도 안되네
+
+
+
+
+
+
+
+
 	rsem-calculate-expression --paired-end --bam --estimate-rspd --append-names --no-bam-output -p 6 TestData1.Aligned.toTranscriptome.out.bam /RsemIndex path ./RSEM/TestData1.RSEM
 	ls
 	cd RSEM
@@ -240,8 +251,10 @@ Uniquely mapped reads % 확인
 	cat TestData1.RSEM.genes.results | cut -f1,6,7 | less
 	cat TestData1.RSEM.genes.results | cut -f1,6,7 | sort -k3 -nr | less
 	
-	
-	
-	
+
+
+
+memo
+	awk -F '\t' -v OFS=, '!/^#/ {$1=$1;print}' GCF_007814115.1_ASM781411v1_genomic.gff > GCF_007814115.1_ASM781411v1_genomic_gff.csv;
 
 
