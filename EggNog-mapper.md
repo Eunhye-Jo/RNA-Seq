@@ -1,63 +1,40 @@
-	conda install -c bioconda eggnog-mapper
+https://github.com/eggnogdb/eggnog-mapper/wiki/eggNOG-mapper-v2.1.5-to-v2.1.6#Conda_bioconda_channel_version
+
 	
-
-	Collecting package metadata (current_repodata.json): done
-	Solving environment: failed with initial frozen solve. Retrying with flexible solve.
-	Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
-	Collecting package metadata (repodata.json): done
-	Solving environment: done
-
-	## Package Plan ##
-
-	  environment location: /opt/anaconda3
-
-	  added / updated specs:
-	    - eggnog-mapper
-
-
-	The following packages will be downloaded:
-
-	    package                    |            build
-	    ---------------------------|-----------------
-	    biopython-1.78             |   py38h9ed2024_0         2.1 MB
-	    diamond-0.9.21             |                1         653 KB  bioconda
-	    easel-0.48                 |       hb4d813b_0         2.6 MB  bioconda
-	    eggnog-mapper-2.1.3        |     pyhdfd78af_0         104 KB  bioconda
-	    gawk-5.1.0                 |       h8a0c380_0         985 KB
-	    hmmer-3.3.2                |       h589c0e0_1        15.1 MB  bioconda
-	    mmseqs2-13.45111           |       h14b862d_1         1.7 MB  bioconda
-	    prodigal-2.6.3             |       hb4d813b_3         399 KB  bioconda
-	    wget-1.20.1                |       h051b688_0         479 KB
-	    ------------------------------------------------------------
-						   Total:        24.0 MB
-
-	The following NEW packages will be INSTALLED:
-
-	  biopython          pkgs/main/osx-64::biopython-1.78-py38h9ed2024_0
-	  diamond            bioconda/osx-64::diamond-0.9.21-1
-	  easel              bioconda/osx-64::easel-0.48-hb4d813b_0
-	  eggnog-mapper      bioconda/noarch::eggnog-mapper-2.1.3-pyhdfd78af_0
-	  gawk               pkgs/main/osx-64::gawk-5.1.0-h8a0c380_0
-	  hmmer              bioconda/osx-64::hmmer-3.3.2-h589c0e0_1
-	  mmseqs2            bioconda/osx-64::mmseqs2-13.45111-h14b862d_1
-	  prodigal           bioconda/osx-64::prodigal-2.6.3-hb4d813b_3
-	  wget               pkgs/main/osx-64::wget-1.20.1-h051b688_0
-
-
-	Proceed ([y]/n)? y
-
-
-	Downloading and Extracting Packages
-	diamond-0.9.21       | 653 KB    | ####################################################################### | 100% 
-	eggnog-mapper-2.1.3  | 104 KB    | ####################################################################### | 100% 
-	biopython-1.78       | 2.1 MB    | ####################################################################### | 100% 
-	easel-0.48           | 2.6 MB    | ####################################################################### | 100% 
-	prodigal-2.6.3       | 399 KB    | ####################################################################### | 100% 
-	hmmer-3.3.2          | 15.1 MB   | ####################################################################### | 100% 
-	mmseqs2-13.45111     | 1.7 MB    | ####################################################################### | 100% 
-	wget-1.20.1          | 479 KB    | ####################################################################### | 100% 
-	gawk-5.1.0           | 985 KB    | ####################################################################### | 100% 
-	Preparing transaction: done
-	Verifying transaction: done
-	Executing transaction: done
+	(base) foodlabui-iMac:~ foodlab$ pip install eggnog-mapper
 	
+.
+	
+	Requirement already satisfied: eggnog-mapper in /opt/anaconda3/lib/python3.8/site-packages (2.1.3)
+	Collecting biopython==1.76
+	  Downloading biopython-1.76-cp38-cp38-macosx_10_9_x86_64.whl (2.3 MB)
+	     |████████████████████████████████| 2.3 MB 8.0 MB/s 
+	Collecting psutil==5.7.0
+	  Downloading psutil-5.7.0.tar.gz (449 kB)
+	     |████████████████████████████████| 449 kB 46.0 MB/s 
+	Requirement already satisfied: numpy in /opt/anaconda3/lib/python3.8/site-packages (from biopython==1.76->eggnog-mapper) (1.20.3)
+	Building wheels for collected packages: psutil
+	  Building wheel for psutil (setup.py) ... done
+	  Created wheel for psutil: filename=psutil-5.7.0-cp38-cp38-macosx_10_9_x86_64.whl size=227419 sha256=81c723e9e24d555e308a30ad29b673363dab27d5470f8217fd3c398980e5d8aa
+	  Stored in directory: /Users/FOODLAB/Library/Caches/pip/wheels/90/c9/b6/04665702b01dbd9ee92a05e834b627948ed01cdd482e6a78e1
+	Successfully built psutil
+	Installing collected packages: psutil, biopython
+	  Attempting uninstall: psutil
+	    Found existing installation: psutil 5.8.0
+	    Uninstalling psutil-5.8.0:
+	      Successfully uninstalled psutil-5.8.0
+	  Attempting uninstall: biopython
+	    Found existing installation: biopython 1.78
+	    Uninstalling biopython-1.78:
+	      Successfully uninstalled biopython-1.78
+	ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+	spyder 4.2.5 requires pyqt5<5.13, which is not installed.
+	spyder 4.2.5 requires pyqtwebengine<5.13, which is not installed.
+	Successfully installed biopython-1.76 psutil-5.7.0
+	(base) foodlabui-iMac:~ foodlab$ 
+
+
+
+
+
+
